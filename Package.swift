@@ -26,15 +26,32 @@
 
 import PackageDescription
 
-let package = Package(name: "AlamofireNetworkActivityLogger",
-                      platforms: [.iOS(.v10),
-                                  .macOS(.v10_12),
-                                  .tvOS(.v10),
-                                  .watchOS(.v3)],
-                      products: [.library(name: "AlamofireNetworkActivityLogger", targets: ["AlamofireNetworkActivityLogger"])],
-                      dependencies: [.package(url: "https://github.com/Alamofire/Alamofire.git",
-                                              from: "5.4.0")],
-                      targets: [.target(name: "AlamofireNetworkActivityLogger",
-                                        dependencies: ["Alamofire"],
-                                        path: "Source")],
-                      swiftLanguageVersions: [.v5])
+let package = Package(
+    name: "AlamofireNetworkActivityLogger",
+    platforms: [
+        .iOS(.v10),
+        .macOS(.v10_12),
+        .tvOS(.v10),
+        .watchOS(.v3)
+    ],
+    products: [
+        .library(
+            name: "AlamofireNetworkActivityLogger",
+            targets: ["AlamofireNetworkActivityLogger"]
+        )
+    ],
+    dependencies: [
+        .package(
+            url: "https://github.com/Alamofire/Alamofire.git",
+            from: "5.10.2"
+        )
+    ],
+    targets: [
+        .target(
+            name: "AlamofireNetworkActivityLogger",
+            dependencies: ["Alamofire"],
+            path: "Source"
+        )
+    ],
+    swiftLanguageVersions: [.v5]
+)
